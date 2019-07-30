@@ -1,4 +1,4 @@
-import Document from 'next/document'
+import Document, { Head, Main, NextScript } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
 
 export default class MyDocument extends Document {
@@ -25,5 +25,20 @@ export default class MyDocument extends Document {
     } finally {
       sheet.seal()
     }
+  }
+  render() {
+    return (
+      <html className="has-navbar-fixed-top">
+        <Head>
+          <link rel="stylesheet" href="./static/css/global.css" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <meta charSet="utf-8" />          
+        </Head>
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </html>
+    )
   }
 }
