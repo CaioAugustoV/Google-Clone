@@ -1,6 +1,7 @@
 {
-  "name": "with-styled-components",
+  "name": "google",
   "version": "1.0.0",
+  "author": "Caio Augusto",
   "scripts": {
     "dev": "next",
     "build": "next build",
