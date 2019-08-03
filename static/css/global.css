@@ -1,5 +1,6 @@
 body{
   margin: 0;
+  font-family: arial, sans-serif;
 }
 
 #__next-build-watcher, #__next-prerender-indicator{
