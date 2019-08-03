@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
+import { useRouter } from 'next/router'
 
 const MainSearch = styled.div`
   width: 100%;
@@ -72,16 +73,23 @@ const Buttons = styled.div`
 `;
 
 export default function pages() {
+  const [Find, setFind] = useState('')
+  const router = useRouter()
+  
+  function FindInGoogle(){
+    router.push(`https://www.google.com/search?q=${Find}`)
+  }
+
   return (
     <MainSearch>
       <img src="./static/img/google-logo.png" />
       <MainInput>
-        <input type="text" />
+        <input type="text" onChange={e => setFind(e.target.value)}/>
         <img src="./static/img/microfone.png" />
         <img src="./static/img/teclado.png" />
       </MainInput>
       <MainButtons>
-        <Buttons>Pesquisar Google</Buttons>
+        <Buttons onClick={() => FindInGoogle()}>Pesquisar Google</Buttons>
         <Buttons>Estou com sorte</Buttons>
       </MainButtons>
     </MainSearch>
